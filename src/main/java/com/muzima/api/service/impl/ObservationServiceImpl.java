@@ -276,6 +276,7 @@ public class ObservationServiceImpl implements ObservationService {
      */
     @Override
     public void updateObservation(final Observation observation) throws IOException {
+        observation.setEditStatus("edited");
         observationDao.update(observation, Constants.UUID_OBSERVATION_RESOURCE);
     }
 
