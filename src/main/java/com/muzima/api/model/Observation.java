@@ -33,7 +33,7 @@ public class Observation extends OpenmrsSearchable {
 
     private boolean voided;
     
-    private HashMap<String,String> editStatus;
+    private String editStatus;
 
     public Person getPerson() {
         return person;
@@ -141,11 +141,21 @@ public class Observation extends OpenmrsSearchable {
         this.voided = voided;
     }
     
-      /**
+        /**
+     * This method takes a hash of parameters required to change the status
+     * of an observation.
+    
+     * @param editStatus 
+     */
+    public void setEditStatus(String editStatus){
+        this.editStatus= editStatus;
+    }
+    
+    /**
      * This method returns the editStatus of an observation
      * @return editStatus
      */
-    public HashMap<String,String> getEditStatus(){
+    public String getEditStatus(){
         return this.editStatus;
     }
 }
